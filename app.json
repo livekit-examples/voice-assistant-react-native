@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "io.livekit.voiceassistantreactnative"
     },
     "web": {
       "bundler": "metro",
@@ -24,6 +25,8 @@
     },
     "plugins": [
       "expo-router",
+      "@livekit/react-native-expo-plugin", 
+      "@config-plugins/react-native-webrtc",
       [
         "expo-splash-screen",
         {
