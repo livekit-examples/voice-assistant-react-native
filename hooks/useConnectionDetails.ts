@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
 // TODO: Add your Sandbox ID here
-const sandboxID = "";
-const tokenEndpoint = "https://cloud-api.livekit.io/api/sandbox/connection-details";
+const sandboxID = '';
+const tokenEndpoint =
+  'https://cloud-api.livekit.io/api/sandbox/connection-details';
 
 // For use without a token server.
-const hardcodedUrl = "";
-const hardcodedToken = "";
+const hardcodedUrl = '';
+const hardcodedToken = '';
 
 /**
  * Retrieves a LiveKit token.
@@ -16,22 +17,22 @@ const hardcodedToken = "";
  */
 export function useConnectionDetails(): ConnectionDetails | undefined {
   const [details, setDetails] = useState<ConnectionDetails | undefined>(() => {
-    if(!sandboxID) {
+    if (!sandboxID) {
       return {
         url: hardcodedUrl,
         token: hardcodedToken,
-      }
+      };
     }
     return undefined;
   });
 
   useEffect(() => {
     const fetchToken = async () => {
-      if(!sandboxID) {
+      if (!sandboxID) {
         return;
       }
       const response = await fetch(tokenEndpoint, {
-        headers: { "X-Sandbox-ID": sandboxID}
+        headers: { 'X-Sandbox-ID': sandboxID },
       });
       const json = await response.json();
 
@@ -39,17 +40,17 @@ export function useConnectionDetails(): ConnectionDetails | undefined {
         setDetails({
           url: json.serverUrl,
           token: json.participantToken,
-        })
+        });
       }
-    }
+    };
 
     fetchToken();
-  }, [])
+  }, []);
 
   return details;
 }
 
 type ConnectionDetails = {
-  url: string,
-  token: string,
-}
+  url: string;
+  token: string;
+};

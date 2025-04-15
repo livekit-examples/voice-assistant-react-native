@@ -1,7 +1,6 @@
 import { Stack } from 'expo-router';
 import React from 'react';
 
-
 export default function AssistantLayout() {
   return (
     <Stack>

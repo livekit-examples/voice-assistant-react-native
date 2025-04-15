@@ -5,7 +5,7 @@ export default function StartScreen() {
   const router = useRouter();
 
   return (
-    <View style={styles.container} >
+    <View style={styles.container}>
       <Button
         onPress={() => router.navigate('../assistant')}
         title="Start Voice Assistant"
@@ -17,7 +17,7 @@ export default function StartScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
