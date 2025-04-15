@@ -44,7 +44,7 @@ export function useConnectionDetails(): ConnectionDetails | undefined {
     }
 
     fetchToken();
-  }, [sandboxID])
+  }, [])
 
   return details;
 }
