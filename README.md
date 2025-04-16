@@ -15,20 +15,29 @@ First, create a new [Sandbox Token Server](https://cloud.livekit.io/projects/p_m
 Then, run the following command to automatically clone this template and connect it to LiveKit Cloud:
 
 ```bash
-lk app create --template voice-assistant-react-native --sandbox <token_server_sandbox_id>
+lk app create --template-url https://github.com/livekit-examples/voice-assistant-react-native --sandbox <token_server_sandbox_id>
 ```
 
-Afterwards, run `npx expo install` to install dependencies,
-and then `npx expo start` from the command line to run the app. You can also use `npx expo run:android` or `npx expo run:ios` to run the app on the respective devices.
+Afterwards, move to the newly created folder and run the following commands:
+
+```bash
+npm install
+
+# Android
+npx expo run:android
+
+# iOS
+npx expo run:ios
+```
 
 You'll also need an agent to speak with. Try our sample voice assistant agent for [Python](https://github.com/livekit-examples/voice-pipeline-agent-python), [Node.js](https://github.com/livekit-examples/voice-pipeline-agent-node), or [create your own from scratch](https://docs.livekit.io/agents/quickstart/).
 
 > [!NOTE]
-> To setup without the LiveKit CLI, clone the repository and edit the `useConnectionDetails.ts` file to add either a `sandboxID` (if using a [Sandbox Token Server](https://cloud.livekit.io/projects/p_/sandbox/templates/token-server)), or a [manually generated](#token-generation) URL and token.
+> To setup without the LiveKit CLI, clone the repository and edit the `hooks/useConnectionDetails.ts` file to add either a `sandboxID` (if using a [Sandbox Token Server](https://cloud.livekit.io/projects/p_/sandbox/templates/token-server)), or a [manually generated](#token-generation) URL and token.
 
 ## Token generation
 
-In a production environment, you will be responsible for developing a solution to [generate tokens for your users](https://docs.livekit.io/home/server/generating-tokens/) which is integrated with your authentication solution. You should disable your sandbox token server and modify `TokenExt.kt` to use your own token server.
+In a production environment, you will be responsible for developing a solution to [generate tokens for your users](https://docs.livekit.io/home/server/generating-tokens/) which is integrated with your authentication solution. You should disable your sandbox token server and modify `hooks/useConnectionDetails.ts` to use your own token server.
 
 ## Contributing
 
