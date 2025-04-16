@@ -1,4 +1,4 @@
-<img src="./.github/assets/app-icon.png" alt="Voice Assistant App Icon" width="100" height="100">
+<img src="./.github/assets/icon.png" alt="Voice Assistant App Icon" width="100" height="100">
 
 # React-Native Voice Assistant
 
