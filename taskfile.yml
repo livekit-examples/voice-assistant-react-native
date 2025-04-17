@@ -10,9 +10,9 @@ tasks:
     cmds:
       - echo -e "Setting up sandbox..."
       - platforms: [darwin]
-        cmd: sed -i "" "s/sandboxID = \"\"/sandboxID = \"{{.LIVEKIT_SANDBOX_ID}}\"/g" "{{.ROOT_DIR}}/{{.TOKEN_FILE}}"
+        cmd: sed -i "" "s/sandboxID = ''/sandboxID = '{{.LIVEKIT_SANDBOX_ID}}'/g" "{{.ROOT_DIR}}/{{.TOKEN_FILE}}"
       - platforms: [linux, windows]
-        cmd: sed -i "s/sandboxID = \"\"/sandboxID = \"{{.LIVEKIT_SANDBOX_ID}}\"/g" "{{.ROOT_DIR}}/{{.TOKEN_FILE}}"
+        cmd: sed -i "s/sandboxID = ''/sandboxID = '{{.LIVEKIT_SANDBOX_ID}}'/g" "{{.ROOT_DIR}}/{{.TOKEN_FILE}}"
       - echo -e "\nYour React-Native voice assistant is ready to go!\n"
       - echo -e "To give it a try, run \"npx expo start\" to run the app."
       - echo -e "\nFor more help view your project's README.md file or join our Slack community at https://livekit.io/join-slack."
