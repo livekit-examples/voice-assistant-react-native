@@ -16,5 +16,5 @@ tasks:
       - echo -e "\nYour React-Native voice assistant is ready to go!\n"
 
       - echo -e "Install the dependencies by running \"npm install\"\n"
-      - echo -e "To give it a try, run \"npx expo run:android\" or "npx expo run:ios" to run the app.\n"
+      - echo -e "To give it a try, run \"npx expo run:android\" or \"npx expo run:ios\" to run the app.\n"
       - echo -e "For more help view your project's README.md file or join our Slack community at https://livekit.io/join-slack."
